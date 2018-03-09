@@ -1,4 +1,4 @@
-FROM ubuntu:8.04
+FROM pgrandin/ubuntu:8.04
 
 RUN apt-get update && apt-get install -y wget build-essential libmpfr-dev gettext git-core pocketpc-cab ca-certificates \
 	 && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
