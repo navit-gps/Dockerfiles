@@ -1,4 +1,4 @@
-FROM pgrandin/ubuntu:8.04
+FROM navit/ubuntu:8.04
 
 RUN apt-get update && apt-get install -y wget build-essential libmpfr-dev gettext git-core pocketpc-cab ca-certificates zip \
 	 && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
