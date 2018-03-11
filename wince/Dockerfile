@@ -1,9 +1,9 @@
 FROM pgrandin/ubuntu:8.04
 
-RUN apt-get update && apt-get install -y wget build-essential libmpfr-dev gettext git-core pocketpc-cab ca-certificates \
+RUN apt-get update && apt-get install -y wget build-essential libmpfr-dev gettext git-core pocketpc-cab ca-certificates zip \
 	 && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN wget -c https://sourceforge.net/projects/cegcc/files/cegcc/0.59.1/mingw32ce-0.59.1.tar.bz2/download \
+RUN wget -c http://cfhcable.dl.sourceforge.net/project/cegcc/cegcc/0.59.1/mingw32ce-0.59.1.tar.bz2 \
 	-O mingw32ce-0.59.1.tar.bz2 --no-check-certificate && tar xvjpf mingw32ce-0.59.1.tar.bz2 \
 	&& rm mingw32ce-0.59.1.tar.bz2
 
