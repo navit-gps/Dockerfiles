@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:bionic
 
 RUN apt-get update  && apt-get install -y libglib2.0-dev git autogen autoconf libtool imagemagick zip \
 	wget build-essential gettext cmake \
