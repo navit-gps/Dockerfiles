@@ -1,7 +1,7 @@
 FROM navit/ubuntu:8.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget build-essential libmpfr-dev gettext pocketpc-cab \
-	ca-certificates zip ssh librsvg2-bin \
+	ca-certificates zip ssh librsvg2-bin git-core xsltproc \
 	 && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget -c http://cfhcable.dl.sourceforge.net/project/cegcc/cegcc/0.59.1/mingw32ce-0.59.1.tar.bz2 \
