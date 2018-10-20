@@ -41,11 +41,6 @@ tar --append --file=Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar ./
 bzip2 Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar
 rm -rf ./home ./var ./etc
 
-# Import it as a docker base image & build the full image
-echo "Importing base image"
-docker import Sailfish_OS-$TARGET_VERSION-Platform_SDK_Chroot-i486.tar "hoehnp/sailfishos-platform-sdk-base:$TARGET_VERSION"
-echo "Importing base image: DONE"
-
 echo "Building image"
 docker build \
     --build-arg "SDK_VERSION=$SDK_VERSION" \

@@ -1,8 +1,9 @@
-FROM hoehnp/sailfishos-platform-sdk-base:2.2.1.18
+FROM scratch
 MAINTAINER Patrick Hoehn <hoehnp@gmx.de>
 
 ARG SDK_VERSION
 ARG TARGET_VERSION
+ADD Sailfish_OS-$TARGET_VERSION-Platform_SDK_Chroot-i486.tar / 
 
 COPY mer-tooling-chroot /home/nemo/mer-tooling-chroot
 COPY Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar.bz2 /home/nemo/Sailfish_OS-$TARGET_VERSION-Sailfish_SDK_Tooling-i486.tar.bz2
