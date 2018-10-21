@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 RUN apt-get update  && apt-get install -y libglib2.0-dev git autogen autoconf libtool imagemagick zip \
-	wget build-essential gettext cmake \
+	wget build-essential gettext cmake unzip librsvg2-bin util-linux ssh \
 	&& apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN dpkg --add-architecture i386 && apt-get update \
 	&& apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 \
