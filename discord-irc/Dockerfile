@@ -1,5 +1,5 @@
 FROM node:7-alpine
-ENV RELEASE v2.6.2
+ENV RELEASE 2.7.0
 
 RUN apk update && apk upgrade \
     && apk add --no-cache git openssh \
