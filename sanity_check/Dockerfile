@@ -2,7 +2,7 @@
 # This image in the "sanity_check" phase of the CI build.
 # It is pre-baked to make the build faster and avoid loosing CI time. #
 # ################################################################### #
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 # git and astyle are needed to do the check of the C & C++ files
 # file is needed for the check of trailing spaces
@@ -14,4 +14,6 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl --location --silent --show-error https://services.gradle.org/distributions/gradle-5.6-all.zip --output /root/.gradle/wrapper/dists/gradle-5.6-all/4chhpeaqtrfx4ih6mafwwr40u/gradle-5.6-all.zip
+ENV GRADLE_ZIP_DIR=/root/.gradle/wrapper/dists/gradle-5.6-all/4chhpeaqtrfx4ih6mafwwr40u
+RUN mkdir -p ${GRADLE_ZIP_DIR} \
+    && curl --location --silent --show-error https://services.gradle.org/distributions/gradle-5.6-all.zip --output ${GRADLE_ZIP_DIR}/gradle-5.6-all.zip
