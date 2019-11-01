@@ -4,8 +4,14 @@
 # ################################################################### #
 FROM ubuntu:18.04
 
+# git and astyle are needed to do the check of the C & C++ files
+# file is needed for the check of trailing spaces
+# openjdk-11-jre is needed to have a java to run the gradle chechstyle for Java files
+# curl are needed here to pre-download the gradle distribution
 RUN apt-get update \
-    && apt-get install -y git astyle libxml2-utils file openjdk-11-jre \
+    && apt-get install -y git astyle libxml2-utils file openjdk-11-jre curl \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN curl --location --silent --show-error https://services.gradle.org/distributions/gradle-5.6-all.zip --output /root/.gradle/wrapper/dists/gradle-5.6-all/4chhpeaqtrfx4ih6mafwwr40u/gradle-5.6-all.zip
