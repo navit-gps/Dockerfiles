@@ -1,4 +1,4 @@
-name: WinCE Image
+name: sanity_check Image
 
 on:
   
@@ -6,16 +6,16 @@ on:
     - cron: '45 18 * * *'
   push:
     paths: 
-      - 'wince'
+      - 'sanity_check'
   pull_request:
     paths: 
-      - 'wince'
+      - 'sanity_check'
 
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository_owner }}/wince
+  IMAGE_NAME: ${{ github.repository_owner }}/sanity_check
 
 
 jobs:
@@ -53,7 +53,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: wince
+          context: sanity_check
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
