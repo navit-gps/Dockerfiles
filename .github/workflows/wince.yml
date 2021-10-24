@@ -5,11 +5,11 @@ on:
   schedule:
     - cron: '45 18 * * *'
   push:
-    paths: 
-      - 'wince'
+    #paths: 
+    #  - 'wince'
   pull_request:
-    paths: 
-      - 'wince'
+    #paths: 
+    #  - 'wince'
 
 env:
   # Use docker.io for Docker Hub if empty
