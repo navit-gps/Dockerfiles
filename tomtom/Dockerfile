@@ -49,7 +49,7 @@ RUN wget -nv -c https://github.com/navit-gps/dependencies/raw/master/tomtom/libp
 	&& rm -rf /tmp/libpng-1.6.29/ /tmp/libpng-1.6.29.tar.gz
 
 # Freetype
-RUN wget -nv -c http://download.savannah.gnu.org/releases/freetype/freetype-2.5.0.tar.gz -P /tmp && cd /tmp/ \
+RUN wget -nv -c http://download.savannah.gnu.org/releases/freetype/freetype-old/freetype-2.5.0.tar.gz -P /tmp && cd /tmp/ \
 	&& tar xzf freetype-2.5.0.tar.gz && cd freetype-2.5.0 \
 	&& ./configure --prefix=$PREFIX --host=$ARCH &&  make && make install \
 	&& rm -rf /tmp/freetype-2.5.0 /tmp/freetype-2.5.0.tar.gz
