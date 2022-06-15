@@ -31,7 +31,7 @@ RUN wget -nv -c https://github.com/navit-gps/dependencies/raw/master/tomtom/tool
 	&& rm /tmp/toolchain_redhat_gcc-3.3.4_glibc-2.3.2-20060131a.tar.gz
 
 # zlib
-RUN wget -nv -c http://zlib.net/zlib-1.2.11.tar.gz -P /tmp && cd /tmp/ \
+RUN wget -nv -c https://downloads.sourceforge.net/project/libpng/zlib/1.2.11/zlib-1.2.11.tar.gz -P /tmp && cd /tmp/ \
 	&& tar xzf zlib-1.2.11.tar.gz && cd zlib-1.2.11 \
 	&& ./configure --prefix=$PREFIX && make && make install \
 	&& rm -rf /tmp/zlib-1.2.11 /tmp/zlib-1.2.11.tar.gz
