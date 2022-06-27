@@ -70,7 +70,7 @@ RUN wget -nv -c http://ftp.gnome.org/pub/gnome/sources/glib/2.25/glib-2.25.17.ta
 	&& rm -rf /tmp/glib-2.25.17 /tmp/glib-2.25.17.tar.gz
 
 # tslib
-RUN git clone https://github.com/playya/tslib-svn.git /tmp/tslib-svn  && cd /tmp/tslib-svn/ \
+RUN git clone https://github.com/libts/tslib.git /tmp/tslib-svn  && cd /tmp/tslib-svn/ \
 	&& sed -i "s|AM_CONFIG_HEADER|AC_CONFIG_HEADERS|g" configure.ac \
 	&& sed -i "119i\#ifdef EVIOCGRAB" plugins/input-raw.c \
 	&& sed -i "124i\#endif" plugins/input-raw.c \
