@@ -70,16 +70,18 @@ RUN wget -nv -c http://ftp.gnome.org/pub/gnome/sources/glib/2.25/glib-2.25.17.ta
 	&& rm -rf /tmp/glib-2.25.17 /tmp/glib-2.25.17.tar.gz
 
 # tslib
-RUN git clone https://github.com/libts/tslib.git /tmp/tslib-svn  && cd /tmp/tslib-svn/ \
-	&& sed -i "s|AM_CONFIG_HEADER|AC_CONFIG_HEADERS|g" configure.ac \
-	&& sed -i "119i\#ifdef EVIOCGRAB" plugins/input-raw.c \
-	&& sed -i "124i\#endif" plugins/input-raw.c \
-	&& sed -i "290i\#ifdef EVIOCGRAB" plugins/input-raw.c \
-	&& sed -i "294i\#endif" plugins/input-raw.c \
-	&& sed -i "s|# module_raw h3600|module_raw h3600|g" etc/ts.conf \
-	&& ./autogen.sh && ./configure --prefix=$PREFIX --host=$ARCH \
-	&& make && make install \
-	&& rm -rf /tmp/tslib-svn/
+#RUN git clone https://github.com/libts/tslib.git /tmp/tslib-svn  && cd /tmp/tslib-svn/ \
+#	&& git checkout 1.23 \
+#	&& sed -i "s|AM_CONFIG_HEADER|AC_CONFIG_HEADERS|g" configure.ac \
+#	&& sed -i "1i\#define SYN_REPORT 0" plugins/input-raw.c \	
+#	&& sed -i "324i\#ifdef EVIOCGRAB" plugins/input-raw.c \
+#	&& sed -i "334i\#endif" plugins/input-raw.c \
+#	&& sed -i "904i\#ifdef EVIOCGRAB" plugins/input-raw.c \
+#	&& sed -i "907i\#endif" plugins/input-raw.c \
+#	&& sed -i "s|# module_raw h3600|module_raw h3600|g" etc/ts.conf \
+#	&& ./autogen.sh && ./configure --prefix=$PREFIX --host=$ARCH \
+#	&& make && make install \
+#	&& rm -rf /tmp/tslib-svn/
 
 # SDL
 RUN wget -nv -c http://www.libsdl.org/release/SDL-1.2.15.tar.gz -P /tmp && cd /tmp/ \
