@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:noble
 
 RUN apt-get update  && apt-get install -y libglib2.0-dev git autogen autoconf libtool imagemagick zip \
 	wget build-essential gettext cmake unzip librsvg2-bin util-linux ssh \
