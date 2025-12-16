@@ -11,7 +11,13 @@ FROM debian:testing-slim
 RUN apt-get update \
     # This is just a trick to go around a specific bug
     && mkdir -p /usr/share/man/man1 \
-    && apt-get install -y git astyle libxml2-utils file default-jre curl \
+    && apt-get install -y \
+         git \
+         astyle \
+         libxml2-utils \
+         file \
+         default-jre \
+         curl \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
