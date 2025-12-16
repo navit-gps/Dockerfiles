@@ -2,7 +2,7 @@
 # This image in the "sanity_check" phase of the CI build.
 # It is pre-baked to make the build faster and avoid loosing CI time. #
 # ################################################################### #
-FROM debian:testing-slim
+FROM debian:stable
 
 # git and astyle are needed to do the check of the C & C++ files
 # file is needed for the check of trailing spaces
