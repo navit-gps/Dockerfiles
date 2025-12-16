@@ -14,9 +14,20 @@ RUN apt-get update \
     && apt-get install -y \
          git \
          astyle \
+         build-essential \
+         clang-format \
+         cmake \
+         gettext \
+         libprotobuf-c-dev \
+         librsvg2-bin \
          libxml2-utils \
          file \
          default-jre \
+         protobuf-c-compile \
+         sed \
+         unzip \
+         util-linux \
+         wget \
          curl \
     && apt-get clean \
     && apt-get autoremove \
