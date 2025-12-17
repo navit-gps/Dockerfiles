@@ -25,7 +25,6 @@ RUN apt-get update \
          libxml2-utils \
          file \
          default-jre \
-         protobuf-c-compile \
          sed \
          unzip \
          util-linux \
