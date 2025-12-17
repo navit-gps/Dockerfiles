@@ -7,9 +7,11 @@ on:
   push:
     paths: 
       - 'sanity_check/**'
+      - '.github/workflows/sanity_check.yml'
   pull_request:
     paths: 
       - 'sanity_check/**'
+      - '.github/workflows/sanity_check.yml'
 
 env:
   # Use docker.io for Docker Hub if empty
