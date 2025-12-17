@@ -8,6 +8,8 @@ FROM debian:stable
 # file is needed for the check of trailing spaces
 # default-jre is needed to have a java to run the gradle chechstyle for Java files
 # curl are needed here to pre-download the gradle distribution
+# clang-format is needed for format checking
+# gettext for po checking
 RUN apt-get update \
     # This is just a trick to go around a specific bug
     && mkdir -p /usr/share/man/man1 \
