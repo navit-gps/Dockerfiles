@@ -6,10 +6,12 @@ on:
     - cron: '45 18 * * *'
   push:
     paths: 
-      - 'tomtom'
+      - 'tomtom/**'
+      - '.github/workflows/tomtom.yml'
   pull_request:
     paths: 
-      - 'tomtom'
+      - 'tomtom/**'
+      - '.github/workflows/tomtom.yml'
 
 env:
   # Use docker.io for Docker Hub if empty

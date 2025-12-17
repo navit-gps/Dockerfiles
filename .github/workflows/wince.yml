@@ -6,10 +6,12 @@ on:
     - cron: '45 18 * * *'
   push:
     paths: 
-      - 'wince'
+      - 'wince/**'
+      - '.github/workflows/wince.yml'
   pull_request:
     paths: 
-      - 'wince'
+      - 'wince/**'
+      - '.github/workflows/wince.yml'
 
 env:
   # Use docker.io for Docker Hub if empty
