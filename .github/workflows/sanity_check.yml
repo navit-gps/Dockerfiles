@@ -6,10 +6,10 @@ on:
     - cron: '45 18 * * *'
   push:
     paths: 
-      - 'sanity_check'
+      - 'sanity_check/**'
   pull_request:
     paths: 
-      - 'sanity_check'
+      - 'sanity_check/**'
 
 env:
   # Use docker.io for Docker Hub if empty
